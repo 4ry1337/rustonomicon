@@ -1,0 +1,10 @@
+[package]
+name = "rust_to_c"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+name = "rust_to_c"
+crate-type = ["staticlib"]
+
+[dependencies]

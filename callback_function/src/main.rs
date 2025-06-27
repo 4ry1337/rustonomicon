@@ -11,3 +11,11 @@ fn main() {
         call_callback(rust_callback);
     }
 }
+
+// UB if:
+// Rust passes an invalid or null function pointer.
+// C calls back with wrong signature (e.g. passing float instead of int).
+//
+// Matching extern "C" on both sides ensures ABI compatibility.
+//
+// Rust function must not panic — unwinding across FFI boundary is UB.
